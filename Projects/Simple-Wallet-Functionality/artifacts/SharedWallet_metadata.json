@@ -6,6 +6,24 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address payable",
@@ -56,11 +74,11 @@
 	},
 	"sources": {
 		"Projects/Ethereum/Ethereum-Blockchain-Developer-Bootcamp-Solidity/work-dir/Projects/Simple-Wallet-Functionality/SharedWallet.sol": {
-			"keccak256": "0x46af3cc53eccaa4fd9d86600f552ac4685b296fd6f6eddc04dc57ff666a46bad",
+			"keccak256": "0x2d4c58bcff807acba8fb2d70b8bf0594581d86e48460609489f452b7e3e87400",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://16bb42a4b5a6e2b72a574698832710b3580f8d5563e5f816f45e0f59e92a9a47",
-				"dweb:/ipfs/QmW72q1nmY9tdUFwx6cc5tnTbCaMc4TEcKY8V3pxZqKtbt"
+				"bzz-raw://c6a065f2da193ce24436b902caa7937a182186931cd9e6a15e8e5ee236711149",
+				"dweb:/ipfs/QmcDQHV6rgPL3ys3RdDasdjhQB7pDsGKWLv2fiCHfnDDge"
 			]
 		}
 	},

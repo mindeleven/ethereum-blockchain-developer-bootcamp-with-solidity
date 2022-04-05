@@ -19,9 +19,11 @@ contract SharedWallet {
     constructor() {
         owner = msg.sender;
     }
-    
+   
     // function to get money out of the contract
     function withdrawMoney(address payable _to, uint _amount) public {
+        // secure witdrawal function
+        require(owner == msg.sender, "You're not allowed");
         _to.transfer(_amount);
     }
     
