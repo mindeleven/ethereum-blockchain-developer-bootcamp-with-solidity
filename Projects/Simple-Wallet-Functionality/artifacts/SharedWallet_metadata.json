@@ -25,6 +25,43 @@
 				"type": "event"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_who",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "addAllowance",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "owner",
 				"outputs": [
@@ -134,11 +171,11 @@
 			]
 		},
 		"Projects/Ethereum/Ethereum-Blockchain-Developer-Bootcamp-Solidity/work-dir/Projects/Simple-Wallet-Functionality/SharedWallet.sol": {
-			"keccak256": "0x45484965cf74a614a8cb7c153bf945db4cd459fc4ffe9a26e2c4c50df0a9a242",
+			"keccak256": "0x0f19a41a05fccc42efe981677dee2654722f4a92644d87f0d6cecc1796fb30c5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d265b5f57327f438f92f7b2ae90b2bfecb9f7f473cf2b2592ee1ca7278d8c3d1",
-				"dweb:/ipfs/QmSLZpjmMBhwTKKJx3m3USvC9i1CKZ8CPH5rKzoCXjyEM2"
+				"bzz-raw://ef343a669db3c814d6bfd812c1f01558dd29e3afce7db7b5a655c755f211d7dc",
+				"dweb:/ipfs/QmUxnduuvc6QWP1mhrSNDWFAbi85Y3s459sGottjedEhaN"
 			]
 		}
 	},

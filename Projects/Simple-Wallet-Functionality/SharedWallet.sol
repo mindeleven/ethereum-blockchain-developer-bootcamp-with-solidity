@@ -19,6 +19,12 @@ contract SharedWallet is Ownable {
         return owner() == msg.sender;
     }
 
+    mapping(address => uint) public allowance;
+
+    function addAllowance(address _who, uint _amount) public onlyOwner {
+        allowance[_who] = _amount;
+    }
+
     // function to get money out of the contract
     function withdrawMoney(address payable _to, uint _amount) public onlyOwner {
         _to.transfer(_amount);
