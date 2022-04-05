@@ -15,19 +15,6 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract SharedWallet is Ownable {
 
-    // Securing the smart contract by setting the owner
-    address public owner;
-
-    constructor() {
-        owner = msg.sender;
-    }
-   
-    // secure witdrawal function
-    modifier onlyOwner() {
-        require(owner == msg.sender, "You're not allowed");
-        _;
-    }
-
     // function to get money out of the contract
     function withdrawMoney(address payable _to, uint _amount) public onlyOwner {
         _to.transfer(_amount);

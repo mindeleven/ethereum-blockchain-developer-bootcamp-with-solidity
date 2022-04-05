@@ -6,9 +6,23 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
 			},
 			{
 				"inputs": [],
@@ -21,6 +35,26 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -48,7 +82,17 @@
 		],
 		"devdoc": {
 			"kind": "dev",
-			"methods": {},
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
 			"version": 1
 		},
 		"userdoc": {
@@ -90,11 +134,11 @@
 			]
 		},
 		"Projects/Ethereum/Ethereum-Blockchain-Developer-Bootcamp-Solidity/work-dir/Projects/Simple-Wallet-Functionality/SharedWallet.sol": {
-			"keccak256": "0x4ef76d0371ea4224971968bcf67cda70e999522aaa0dba2ae63b03f2c622076e",
+			"keccak256": "0xd1774116a90749cc1f8a09f3fb92738ff4e2f88dbd73f6e8b393f780d6ce2194",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1520e871377f338b3284915b0099f25efb53eedafa0e15d60d578d37f34c9417",
-				"dweb:/ipfs/QmeYCUReziG8sstb88rQJnXWhDKm85nQVuZ7Nej64D78Cf"
+				"bzz-raw://1869877d71976c96a4e818ee042fa55089bd60b5cf9acae4505dc6e24e8cb579",
+				"dweb:/ipfs/QmYbiKaWxydt83H45sXSYbGwvsUyKJLRVG49wARamoKZeH"
 			]
 		}
 	},
