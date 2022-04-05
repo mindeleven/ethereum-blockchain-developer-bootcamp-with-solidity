@@ -11,7 +11,9 @@ pragma solidity 0.8.13;
 // (2) withdrawal function, takes also care of who's interacting with this wallet
 // (3) permissions using modifier, checking the permissions
 
-contract SharedWallet {
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract SharedWallet is Ownable {
 
     // Securing the smart contract by setting the owner
     address public owner;

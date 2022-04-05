@@ -1,3 +1,5 @@
 **/.DS_Store
 
-*artifacts
+**/artifacts/
+
+**/node_modules/
