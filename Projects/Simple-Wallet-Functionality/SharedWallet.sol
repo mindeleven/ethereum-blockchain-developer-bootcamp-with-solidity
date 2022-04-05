@@ -20,10 +20,14 @@ contract SharedWallet {
         owner = msg.sender;
     }
    
-    // function to get money out of the contract
-    function withdrawMoney(address payable _to, uint _amount) public {
-        // secure witdrawal function
+    // secure witdrawal function
+    modifier onlyOwner() {
         require(owner == msg.sender, "You're not allowed");
+        _;
+    }
+
+    // function to get money out of the contract
+    function withdrawMoney(address payable _to, uint _amount) public onlyOwner {
         _to.transfer(_amount);
     }
     
