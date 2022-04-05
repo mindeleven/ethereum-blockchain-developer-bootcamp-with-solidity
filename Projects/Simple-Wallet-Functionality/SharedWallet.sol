@@ -13,10 +13,20 @@ pragma solidity 0.8.13;
 
 contract SharedWallet {
 
+    // Securing the smart contract by setting the owner
+    address public owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
+    
+    // function to get money out of the contract
     function withdrawMoney(address payable _to, uint _amount) public {
         _to.transfer(_amount);
     }
-
+    
+    // function to deposit money to the smart contract
+    // deposit funds with fallback function
     receive() external payable {
 
     }
