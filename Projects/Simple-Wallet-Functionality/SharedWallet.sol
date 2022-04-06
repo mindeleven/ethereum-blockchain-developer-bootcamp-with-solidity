@@ -25,8 +25,14 @@ contract SharedWallet is Ownable {
         allowance[_who] = _amount;
     }
 
+    modifier ownerOrAllowed(uint _amount) {
+        // owner is set in Ownable smart contract
+        require(isOwner() || allowance[msg.sender] > _amount, "You are not allowed");
+        _;
+    }
+
     // function to get money out of the contract
-    function withdrawMoney(address payable _to, uint _amount) public onlyOwner {
+    function withdrawMoney(address payable _to, uint _amount) public ownerOrAllowed(_amount) {
         _to.transfer(_amount);
     }
     
