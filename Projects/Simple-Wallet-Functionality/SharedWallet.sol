@@ -27,7 +27,7 @@ contract SharedWallet is Ownable {
 
     modifier ownerOrAllowed(uint _amount) {
         // owner is set in Ownable smart contract
-        require(isOwner() || allowance[msg.sender] > _amount, "You are not allowed");
+        require(isOwner() || allowance[msg.sender] >= _amount, "You are not allowed");
         _;
     }
 
