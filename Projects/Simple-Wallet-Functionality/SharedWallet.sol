@@ -45,6 +45,7 @@ contract Allowance is Ownable {
 contract SharedWallet is Allowance {
 
     event MoneySent(address indexed _beneficiary, uint _amount);
+    event MoneyReceived(address indexed _from, uint _amount);
 
     // function to get money out of the contract
     function withdrawMoney(address payable _to, uint _amount) public ownerOrAllowed(_amount) {
@@ -62,6 +63,6 @@ contract SharedWallet is Allowance {
     // function to deposit money to the smart contract
     // deposit funds with fallback function
     receive() external payable {
-
+      emit MoneyReceived(msg.sender, msg.value);
     }
 }

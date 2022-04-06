@@ -42,6 +42,25 @@
 					{
 						"indexed": true,
 						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "MoneyReceived",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
 						"name": "_beneficiary",
 						"type": "address"
 					},
@@ -221,11 +240,11 @@
 			]
 		},
 		"Projects/Ethereum/Ethereum-Blockchain-Developer-Bootcamp-Solidity/work-dir/Projects/Simple-Wallet-Functionality/SharedWallet.sol": {
-			"keccak256": "0x40ddee7df3ca2c8e32703b36058e9710a5346911c11a390e814672befbfd3265",
+			"keccak256": "0xe00d0b3314d1197c9441c1ed8afaf99c9b6d060cc873fa603866914609ec49dc",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f8cc58b9f3c86bda4545cecdecb34a9bba5b40728b5606034b88733fc42b1478",
-				"dweb:/ipfs/QmZD6ar5LJ2JzLo9TjXSMN123axqXBo4PPh7xzTnfqhfyK"
+				"bzz-raw://7abe747c620e041f430113aa9e0c8b853a79e92a20529b5c92ec5670a3ab90ec",
+				"dweb:/ipfs/Qmd17u4aqs4cJXvFvfARB2PWERCxMGtVfDLHbbBcHunEzd"
 			]
 		}
 	},
