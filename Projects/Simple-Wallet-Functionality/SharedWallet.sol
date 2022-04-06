@@ -44,6 +44,8 @@ contract Allowance is Ownable {
 
 contract SharedWallet is Allowance {
 
+    event MoneySent(address indexed _beneficiary, uint _amount);
+
     // function to get money out of the contract
     function withdrawMoney(address payable _to, uint _amount) public ownerOrAllowed(_amount) {
         // displaying error message to tell if there's enough ether
@@ -53,6 +55,7 @@ contract SharedWallet is Allowance {
         if (!isOwner()) {
             reduceAllowance(msg.sender, _amount);
         }
+        emit MoneySent(_to, _amount);
         _to.transfer(_amount);
     }
     
