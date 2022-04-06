@@ -171,11 +171,11 @@
 			]
 		},
 		"Projects/Ethereum/Ethereum-Blockchain-Developer-Bootcamp-Solidity/work-dir/Projects/Simple-Wallet-Functionality/SharedWallet.sol": {
-			"keccak256": "0x6f54d0da2b0e2553463cee8ae53e28e349dc7cfc676e96c351fe38f6a1b0bd47",
+			"keccak256": "0x4a882b88a228fad2cf018e7acc4dfc7e8cf14a96f477127c2616c11a43d02edf",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://daf20daa26645ebea8e4dfddff8c453f793cae89146cd2f634d03f405f3e0663",
-				"dweb:/ipfs/QmawWSYb1jP4UxhMAz1uESDG2AeWKC3RAuVYbmZfcCCZXb"
+				"bzz-raw://80c7ecd32f229ccbfc76901291dc5f067c9b88d74a0893fe6ccf5881f9223ee7",
+				"dweb:/ipfs/Qmdka12h2mEEWat1yPDvsdQ1Cu9rtdYM5C3Dg1V2pTewtH"
 			]
 		}
 	},

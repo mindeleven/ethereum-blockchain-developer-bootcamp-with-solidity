@@ -37,6 +37,8 @@ contract SharedWallet is Ownable {
 
     // function to get money out of the contract
     function withdrawMoney(address payable _to, uint _amount) public ownerOrAllowed(_amount) {
+        // displaying error message to tell if there's enough ether
+        require(_amount <= address(this).balance, "There are not enough funds stored in the smart contract");
         // owner can withdraw unlimited amount
         // not the owner - can only withdraw what's stored in the allowance
         if (!isOwner()) {
