@@ -147,7 +147,7 @@
 				"inputs": [],
 				"name": "renounceOwnership",
 				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -248,11 +248,11 @@
 			]
 		},
 		"Projects/Ethereum/Ethereum-Blockchain-Developer-Bootcamp-Solidity/work-dir/Projects/Simple-Wallet-Functionality/SharedWallet.sol": {
-			"keccak256": "0x6e67e62df29cd7e19f0c6e6aad1b7804f59cba5f1849638c709204410b5e64b6",
+			"keccak256": "0x3cabd7023fd91e7647d6ec861ffe1ebc0f0958df0bb13bbc8cb3fa68f67d2e2c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://595c59e8210ef0edf21dd4051d8e997ec1b1a3e7dc882eac5033db3defbebc08",
-				"dweb:/ipfs/QmfDEdhpWVNEn729XJ3Wyck8TN1aeNpWmMWoSaeNpRtSHL"
+				"bzz-raw://16c985c62b44b3a42f1e8aac8442601f426d58638eba1c910db9db6d1bbaf2d8",
+				"dweb:/ipfs/QmcU9tS6hb9jNdqXyiNo7eJUkqg5sXFpCGyhykPP8DtEQw"
 			]
 		}
 	},

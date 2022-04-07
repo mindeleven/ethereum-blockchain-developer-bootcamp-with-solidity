@@ -62,6 +62,12 @@ contract SharedWallet is Allowance {
         emit MoneySent(_to, _amount);
         _to.transfer(_amount);
     }
+
+    // overwriting renounceOwnership function 
+    // to remove functionality to withdraw ownership
+    function renounceOwnership() public override view onlyOwner {
+        revert("Can't renounce ownership here");
+    }
     
     // function to deposit money to the smart contract
     // deposit funds with fallback function
