@@ -247,12 +247,20 @@
 				"dweb:/ipfs/QmfYuZxRfx2J2xdk4EXN7jKg4bUYEMTaYk9BAw9Bqn4o2Y"
 			]
 		},
-		"Projects/Ethereum/Ethereum-Blockchain-Developer-Bootcamp-Solidity/work-dir/Projects/Simple-Wallet-Functionality/SharedWallet.sol": {
-			"keccak256": "0x3cabd7023fd91e7647d6ec861ffe1ebc0f0958df0bb13bbc8cb3fa68f67d2e2c",
+		"Projects/Ethereum/Ethereum-Blockchain-Developer-Bootcamp-Solidity/work-dir/Projects/Simple-Wallet-Functionality/Allowance.sol": {
+			"keccak256": "0x1347938ae283830fc02bded44dca22b9f9f13583a1079ad0b8945eb3c71870d8",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://16c985c62b44b3a42f1e8aac8442601f426d58638eba1c910db9db6d1bbaf2d8",
-				"dweb:/ipfs/QmcU9tS6hb9jNdqXyiNo7eJUkqg5sXFpCGyhykPP8DtEQw"
+				"bzz-raw://91127259dfc8ac3f4f26b5bd9da306ab5271c94b448d47c216a44ea31d944490",
+				"dweb:/ipfs/QmW1fLZupuF1d3mBWUuSay43EGjeUmWT6uSnGCi5ZNE7TD"
+			]
+		},
+		"Projects/Ethereum/Ethereum-Blockchain-Developer-Bootcamp-Solidity/work-dir/Projects/Simple-Wallet-Functionality/SharedWallet.sol": {
+			"keccak256": "0xcbd7dfa5fc51e600446c12d9cd93b3e843d58b647e07ded2c0085630724c74ae",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c5385f2f6238742efd97937041533f85948a80a9a330eba8b2470531ffccb29e",
+				"dweb:/ipfs/QmWzjqgcB1SvUFzvNweToxzZG5zLzBtvTWzuraKEvCmsvS"
 			]
 		}
 	},
