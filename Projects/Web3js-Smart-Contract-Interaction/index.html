@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Web3.js Browser example</title>
+    <script src="node_modules/web3.js-browser/build/web3.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      // connect to ganache
+      const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+      // get accounts from ganache
+      web3.eth.getAccounts().then(console.log);
+      // interacting with the smart contract
+      let contract = new web3.eth.Contract([
+      	{
+      		"inputs": [
+      			{
+      				"internalType": "uint256",
+      				"name": "_myUint",
+      				"type": "uint256"
+      			}
+      		],
+      		"name": "setUnit",
+      		"outputs": [],
+      		"stateMutability": "nonpayable",
+      		"type": "function"
+      	},
+      	{
+      		"inputs": [],
+      		"name": "myUint",
+      		"outputs": [
+      			{
+      				"internalType": "uint256",
+      				"name": "",
+      				"type": "uint256"
+      			}
+      		],
+      		"stateMutability": "view",
+      		"type": "function"
+      	}
+      ], "0x697A1fB55e00aD879a324cA123c8C0E47d13403f");
+      // calling MyUint
+      contract.methods.myUint().call().then(result => console.log(result.toString()));
+      // calling setUnit
+      contract.methods.setUnit(66).send({
+        from: "0xE5944Fde53f9B751b943117af2764A89fA6d9F30"
+      }).then(console.log);
+    </script>
+
+  </head>
+  <body>
+
+  </body>
+</html>
