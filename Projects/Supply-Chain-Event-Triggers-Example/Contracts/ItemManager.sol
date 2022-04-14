@@ -2,6 +2,23 @@
 
 pragma solidity ^0.8.13;
 
+contract Item {
+    uint public priceInWei;
+    uint public index;
+
+    ItemManager parentContract;
+
+    constructor(ItemManager _parentContract, uint _priceInWei, uint _index) {
+        priceInWei = _priceInWei;
+        index = _index;
+        parentContract = _parentContract;
+    }
+
+    receive() external payable {
+
+    }
+}
+
 contract ItemManager {
 
     enum SupplyChainState{Created, Paid, Delivered}
