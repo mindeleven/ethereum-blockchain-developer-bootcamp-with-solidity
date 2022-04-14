@@ -15,7 +15,12 @@ contract Item {
     }
 
     receive() external payable {
-
+        // it's crucially important to get return value back with low level call function
+        // call function gives two return values 
+        // (1) boolean that tells if it was successful
+        // (2) possible return values
+        (bool success, ) = address(parentContract).call{value:msg.value}(abi.encodeWithSignature("triggerPayment(uint256)", index));
+        require(success, "The transaction wasn't successful, canceling");
     }
 }
 
