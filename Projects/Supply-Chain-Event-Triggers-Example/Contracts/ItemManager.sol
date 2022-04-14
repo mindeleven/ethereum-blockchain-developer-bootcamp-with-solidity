@@ -25,6 +25,7 @@ contract ItemManager {
 
     // item structure
     struct S_Item {
+        Item _item;
         string _identifier;
         uint _itemPrice;
         ItemManager.SupplyChainState _state;
@@ -37,6 +38,8 @@ contract ItemManager {
     event SupplyChainStep(uint _itemIndex, uint _step);
 
     function createItem(string memory _identifier, uint _itemPrice) public {
+        Item item = new Item(this, _itemPrice, itemIndex);
+        items[itemIndex]._item = item;
         items[itemIndex]._identifier = _identifier;
         items[itemIndex]._itemPrice = _itemPrice;
         items[itemIndex]._state = SupplyChainState.Created;
