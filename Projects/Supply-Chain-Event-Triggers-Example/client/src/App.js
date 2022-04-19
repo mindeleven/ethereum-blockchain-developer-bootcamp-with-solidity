@@ -1,31 +1,39 @@
 import React, { Component } from "react";
 import ItemManagerContract from "./contracts/ItemManager.json";
+import ItemContract from "./contracts/Item.json";
 import getWeb3 from "./getWeb3";
 
 import "./App.css";
 
 class App extends Component {
-  state = { storageValue: 0, web3: null, accounts: null, contract: null };
+  state = { loaded: false };
 
   componentDidMount = async () => {
     try {
       // Get network provider and web3 instance.
-      const web3 = await getWeb3();
+      this.web3 = await getWeb3();
 
       // Use web3 to get the user's accounts.
-      const accounts = await web3.eth.getAccounts();
+      this.accounts = await this.web3.eth.getAccounts();
 
       // Get the contract instance.
-      const networkId = await web3.eth.net.getId();
-      const deployedNetwork = ItemManagerContract.networks[networkId];
-      const instance = new web3.eth.Contract(
+      this.networkId = await this.web3.eth.net.getId();
+
+      this.itemManager = new this.web3.eth.Contract(
         ItemManagerContract.abi,
-        deployedNetwork && deployedNetwork.address,
+        ItemManagerContract.networks[this.networkId]
+        && ItemManagerContract.networks[this.networkId].address,
+      );
+
+      this.item = new this.web3.eth.Contract(
+        ItemContract.abi,
+        ItemContract.networks[this.networkId]
+        && ItemContract.networks[this.networkId].address,
       );
 
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
-      this.setState({ web3, accounts, contract: instance }, this.runExample);
+      this.setState({ loaded: true });
     } catch (error) {
       // Catch any errors for any of the above operations.
       alert(
@@ -34,27 +42,14 @@ class App extends Component {
       console.error(error);
     }
   };
-/****
-  runExample = async () => {
-    const { accounts, contract } = this.state;
 
-    // Stores a given value, 5 by default.
-    await contract.methods.set(5).send({ from: accounts[0] });
-
-    // Get the value from the contract to prove it worked.
-    const response = await contract.methods.get().call();
-
-    // Update state with the result.
-    this.setState({ storageValue: response });
-  };
-***/
   render() {
-    if (!this.state.web3) {
+    if (!this.state.loaded) {
       return <div>Loading Web3, accounts, and contract...</div>;
     }
     return (
       <div className="App">
-        <h1>Good to Go!</h1>
+        <h1>Event Trigger / Supply Chain Example</h1>
         <p>Your Truffle Box is installed and ready.</p>
         <h2>Smart Contract Example</h2>
         <p>
