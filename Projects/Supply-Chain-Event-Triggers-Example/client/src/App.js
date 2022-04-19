@@ -6,7 +6,11 @@ import getWeb3 from "./getWeb3";
 import "./App.css";
 
 class App extends Component {
-  state = { loaded: false };
+  state = {
+    loaded: false,
+    cost: 0,
+    itemName: "example_1"
+  };
 
   componentDidMount = async () => {
     try {
@@ -43,6 +47,25 @@ class App extends Component {
     }
   };
 
+  handleSubmit = async () => {
+    const { cost, itemName } = this.state;
+    console.log(itemName, cost, this.itemManager);
+    let result = await this.itemManager.methods.createItem(itemName, cost)
+      .send({ from: this.accounts[0] });
+    console.log(result);
+    //alert("Send "+cost+" Wei to "+result.events.SupplyChainStep.returnValues._address);
+  };
+
+  handleInputChange = (event) => {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  };
+
   render() {
     if (!this.state.loaded) {
       return <div>Loading Web3, accounts, and contract...</div>;
@@ -50,16 +73,34 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Event Trigger / Supply Chain Example</h1>
-        <p>Your Truffle Box is installed and ready.</p>
-        <h2>Smart Contract Example</h2>
-        <p>
-          If your contracts compiled and migrated successfully, below will show
-          a stored value of 5 (by default).
-        </p>
-        <p>
-          Try changing the value stored on <strong>line 42</strong> of App.js.
-        </p>
-        <div>The stored value is: {this.state.storageValue}</div>
+        <h2>Items</h2>
+        <h2>Add Items</h2>
+        <div>
+          Cost in Wei:
+          <input
+            type="text"
+            name="cost"
+            value={this.state.cost}
+            onChange={this.handleInputChange}
+          />
+        </div>
+        <div>
+          Item Name:
+          <input
+            type="text"
+            name="itemName"
+            value={this.state.itemName}
+            onChange={this.handleInputChange}
+          />
+        </div>
+        <div>
+          <button
+            type="button"
+            onClick={this.handleSubmit}
+          >
+            Create new Item
+          </button>
+        </div>
       </div>
     );
   }
