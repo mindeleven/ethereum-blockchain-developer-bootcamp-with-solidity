@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SimpleStorageContract from "./contracts/SimpleStorage.json";
+import ItemManagerContract from "./contracts/ItemManager.json";
 import getWeb3 from "./getWeb3";
 
 import "./App.css";
@@ -17,9 +17,9 @@ class App extends Component {
 
       // Get the contract instance.
       const networkId = await web3.eth.net.getId();
-      const deployedNetwork = SimpleStorageContract.networks[networkId];
+      const deployedNetwork = ItemManagerContract.networks[networkId];
       const instance = new web3.eth.Contract(
-        SimpleStorageContract.abi,
+        ItemManagerContract.abi,
         deployedNetwork && deployedNetwork.address,
       );
 
@@ -34,7 +34,7 @@ class App extends Component {
       console.error(error);
     }
   };
-
+/****
   runExample = async () => {
     const { accounts, contract } = this.state;
 
@@ -47,7 +47,7 @@ class App extends Component {
     // Update state with the result.
     this.setState({ storageValue: response });
   };
-
+***/
   render() {
     if (!this.state.web3) {
       return <div>Loading Web3, accounts, and contract...</div>;
